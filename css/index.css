@@ -1,0 +1,333 @@
+/* 整个微金所的主题颜色 */
+/* 头部区域的样式 */
+#header {
+  border-bottom: 1px solid #ccc;
+}
+#header .row > div {
+  /* 栅格系统的列都自带了相对定位 */
+  border-right: 1px solid #ccc;
+  height: 40px;
+  line-height: 40px;
+  font-size: 12px;
+  text-align: center;
+}
+#header .row > div a {
+  color: #666;
+}
+#header .row > div a img {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  z-index: 999;
+}
+#header .row > div a:hover {
+  text-decoration: none;
+}
+#header .row > div a:hover > img {
+  display: block;
+}
+#header .row > div:last-child {
+  border-right: none;
+}
+#header .row > div .btn-link {
+  color: #666;
+}
+/* 导航条的样式 */
+#nav {
+  background-color: #fff;
+  margin-bottom: 0;
+  top: 0px;
+  z-index: 998;
+  width: 100%;
+}
+#nav .navbar-header {
+  /* 移动端显示的按钮 */
+}
+#nav .navbar-header .navbar-toggle {
+  margin-top: 23px;
+}
+#nav .navbar-header .navbar-brand {
+  height: 80px;
+  /* 注意a的行高只能写50px因为a自带了15px padding-top bottom 内容挤得只有50px 行高只能是50px */
+  line-height: 50px;
+}
+#nav .navbar-header .navbar-brand > i {
+  font-size: 30px;
+}
+#nav .navbar-header .navbar-brand > i.icon-icon {
+  color: #e92322;
+}
+#nav .navbar-header .navbar-brand > i.icon-logo {
+  color: #000;
+}
+#nav .navbar-collapse .navbar-nav > li > a {
+  height: 80px;
+  line-height: 50px;
+}
+#nav .navbar-collapse .navbar-nav > li > a:hover {
+  border-bottom: 2px solid #e92322;
+}
+#nav .navbar-collapse .navbar-nav > li.active > a {
+  background-color: #fff;
+  border-bottom: 2px solid #e92322;
+}
+/* 轮播图区域的样式 */
+#slide {
+  /* item在做轮播图 如果子元素img定位 无法撑开父元素的高度 看不到里面的图片 */
+  /* 但是小图片的时候里面的图片没有设置定位是能撑开高度的就不需要固定高度 */
+}
+@media (min-width: 768px) {
+  #slide {
+    /* 只是由于大图片设置了定位导致父元素没有高度 需要强制设置 
+          但是小图片超小屏幕下是不需要高度 因为小图片没有定位 会撑开父元素的高
+          只需要设置屏幕宽度768 小 中大 屏幕 设置高度使用媒体查询添加高度 */
+  }
+  #slide .item {
+    /* 相对定位不能写死 因为图片正在切换的时候 
+            是没有相对定位的样式 等图片切换完成后才加上相对定位 */
+    height: 410px;
+    /* 可以给大图片的容器item设置overflow:hidden 让超出左右2边的一截图片裁切掉 */
+    overflow: hidden;
+  }
+}
+#slide .large-image {
+  max-width: 2000px;
+  width: 2000px;
+  height: 410px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#slide .small-image {
+  width: 100%;
+}
+/* 特色介绍区域样式 */
+#feature {
+  padding: 40px 0px;
+}
+#feature .media {
+  margin-top: 10px;
+}
+#feature .media > a {
+  color: #666;
+  display: block;
+}
+#feature .media > a:hover {
+  color: #e92322;
+  text-decoration: none;
+}
+/* 立即预约区域的样式 */
+#booking {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  /* 单行可以使用行高但是多行必须使用padding */
+  padding: 20px 0;
+}
+.text-danger {
+  color: #e92322;
+}
+/* 商品区域的样式 */
+#products {
+  padding: 40px 0;
+  background-color: #f5f5f5;
+}
+#products .nav-tabs > li.active > a {
+  background-color: transparent;
+  border-bottom: 3px solid #e92322;
+}
+#products .nav-tabs > li > a {
+  /* 所有a都有边框 如果要去掉边框去掉所有的a */
+  border: 0;
+  color: #666;
+  font-size: 16px;
+  height: 45px;
+}
+#products .nav-tabs > li > a:hover {
+  background-color: transparent;
+}
+#products .tab-content .product {
+  margin-top: 20px;
+  background-color: #fff;
+  display: flex;
+}
+#products .tab-content .product.active {
+  background-color: #e92322;
+  color: #fff;
+  position: relative;
+}
+#products .tab-content .product.active::before {
+  /*单独给第一个active盒子加一个伪元素设置图标 
+                    设置图标的编码
+                    设置图标的字体 */
+  content: "\e915";
+  font-family: 'itcast';
+  font-size: 30px;
+  position: absolute;
+  left: 0px;
+  top: -6px;
+}
+#products .tab-content .product .product-left {
+  flex: 1;
+  height: 160px;
+  padding: 15px;
+}
+#products .tab-content .product .product-left > h4 {
+  text-align: center;
+}
+#products .tab-content .product .product-left .row > div {
+  margin-bottom: 10px;
+}
+#products .tab-content .product .product-left .row > div:nth-child(2n) {
+  text-align: right;
+}
+#products .tab-content .product .product-left .row > div p {
+  margin-bottom: 0px;
+}
+#products .tab-content .product .product-right {
+  width: 120px;
+  /* 单独处理中屏幕的右边的宽度 */
+  height: 160px;
+  border-left: 1px dashed #ccc;
+  /* 使用伸缩布局的垂直居中 让布局方向变成垂直 沿着主轴居中 沿着垂直方向居中 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  /* 使用伪元素实现右边商品左上角和左下角的2个小圆 */
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  #products .tab-content .product .product-right {
+    width: 100px;
+  }
+}
+@media (max-width: 350px) {
+  #products .tab-content .product .product-right {
+    width: 100px;
+  }
+}
+#products .tab-content .product .product-right > p {
+  text-align: center;
+  margin-bottom: 0px;
+}
+#products .tab-content .product .product-right > p > strong {
+  font-size: 30px;
+}
+#products .tab-content .product .product-right::before,
+#products .tab-content .product .product-right::after {
+  content: '';
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  position: absolute;
+  left: -8px;
+  background-color: #f5f5f5;
+}
+#products .tab-content .product .product-right::before {
+  top: -8px;
+}
+#products .tab-content .product .product-right::after {
+  bottom: -8px;
+}
+#products .tab-content .product .product-right .tooltips {
+  text-align: center;
+  position: absolute;
+  top: 20px;
+  /* 定位后没有100%宽度 需要手动设置宽度100%
+                    如果没有宽度 里面提示工具不能完全展示 */
+  width: 100%;
+}
+#products .tab-content .product .product-right .tooltips > button:first-of-type {
+  border: 1px solid #e92322;
+  color: #e92322;
+  background-color: #fff;
+}
+#products .tab-content .product .product-right .tooltips > button:last-of-type {
+  border: 1px solid #0f0;
+  color: #0f0;
+  background-color: #fff;
+}
+/* 新闻区域样式 */
+#news {
+  padding: 40px 0;
+}
+#news .row > div > h4 {
+  text-align: center;
+  line-height: 40px;
+  border-bottom: 1px dashed #ccc;
+  position: relative;
+}
+#news .row > div > h4::after {
+  content: '';
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  right: -10px;
+  bottom: -5px;
+  border: 1px solid #ccc;
+}
+#news .row > div .nav-tabs {
+  border-bottom: 0px;
+}
+@media (max-width: 991px) {
+  #news .row > div .nav-tabs > li {
+    width: 25%;
+  }
+  #news .row > div .nav-tabs > li > a {
+    width: 60px;
+    height: 60px;
+    /* 因为bootstrap把a转成块级元素 需要设置margin:0 auto居中 */
+    margin: 0px auto;
+  }
+}
+#news .row > div .nav-tabs > li > a {
+  border-radius: 50%;
+  margin-bottom: 20px;
+  border: 0;
+  color: #ccc;
+}
+#news .row > div .nav-tabs > li > a:hover {
+  background-color: #e92322;
+}
+#news .row > div .nav-tabs > li > a > i {
+  font-size: 30px;
+}
+#news .row > div .nav-tabs > li.active > a {
+  background-color: #e92322;
+}
+#news .row > div .tab-content ul > li {
+  list-style: none;
+}
+#news .row > div .tab-content ul > li > a {
+  color: #666;
+  line-height: 40px;
+  text-decoration: none;
+}
+/* 合作伙伴区域样式 */
+#partner .container > h3 {
+  text-align: center;
+}
+#partner .container > ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+#partner .container > ul > li {
+  flex: 1;
+  list-style: none;
+}
+#partner .container > ul > li > a {
+  color: #666;
+  text-align: center;
+  display: block;
+}
+#partner .container > ul > li > a:hover {
+  color: #e92322;
+  text-decoration: none;
+}
+#partner .container > ul > li > a > i {
+  font-size: 60px;
+}

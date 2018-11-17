@@ -1,0 +1,363 @@
+@border-color: #ccc;
+@a-color: #666;
+@main-color: #e92322;
+@bg-color: #f5f5f5;
+/*头部区域*/
+
+#header {
+    border-bottom: 1px solid @border-color;
+    .container {
+        .row {
+            >div {
+                line-height: 40px;
+                font-size: 12px;
+                text-align: center;
+                a {
+                    color: @a-color;
+                    text-decoration: none;
+                }
+                button {
+                    color: @a-color;
+                    &.btn-danger {
+                        color: #fff;
+                    }
+                }
+            }
+            >div+div {
+                border-left: 1px solid @border-color;
+            }
+        }
+    }
+}
+
+/*导航条区域*/
+
+#nav {
+    background-color: #fff;
+    z-index: 999;
+    width: 100%;
+    top: 0;
+    .navbar-header {
+        a {
+            height: 80px;
+            line-height: 50px;
+            
+            .icon-icon {
+                color: @main-color;
+                font-size: 30px;
+            }
+            .icon-logo {
+                color: #000;
+                font-size: 30px;
+            }
+        }
+    }
+    .navbar-collapse {
+        .navbar-nav {
+            a {
+                height: 80px;
+                line-height: 50px;
+                &:hover {
+                    border-bottom: 1px solid @main-color;
+                }
+            }
+            .active {
+                a {
+                    color: @a-color;
+                    background-color: #fff;
+                    border-bottom: 1px solid @main-color;
+                }
+            }
+        }
+    }
+}
+
+/*轮播图区域*/
+
+#carousel {
+    .large-img {
+        height: 410px;
+        width: 100%;
+        background-position: center;
+    }
+    .small-img {
+        width: 100%;
+    }
+}
+
+/*特色区域*/
+
+#tese {
+    .container {
+        padding: 30px 0;
+        .row>div {
+            margin: 8px 0;
+            .media {
+                a {
+                    text-decoration: none;
+                    color: @a-color;
+                    &:hover {
+                        color: @main-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*预约区域*/
+
+#yuyue {
+    border-top: 1px solid @border-color;
+    border-bottom: 1px solid @border-color;
+    padding: 15px 0;
+    .container {
+        .text-danger {
+            color: @main-color;
+        }
+    }
+}
+
+/*推荐区域*/
+
+#tuijian {
+    padding: 30px 0;
+    background-color: @bg-color;
+    .nav-tabs{
+        li{
+            a{
+                box-sizing: border-box;
+                color: @a-color;
+                // line-height: 45px;
+                height: 45px;
+                &:hover{
+                    background-color: transparent;
+                    border-color: transparent;
+                }
+            }
+            &.active{
+                a{
+                    color: @a-color;
+                    background-color: transparent;
+                    border-color: transparent;
+                    border-bottom: 3px solid @main-color;
+                    // box-sizing: border-box;
+                }
+            }
+        }
+        
+    }
+    .tab-content{
+        .row{
+            >div{
+                margin-top: 20px;
+                .ticket {
+                    background-color: #fff;
+                    display: flex;
+                    .left{
+                        flex: 1;
+                        height: 160px;
+                        padding: 15px;
+                        border-right: 1px dashed @border-color;
+                        h4{
+                            text-align: center;
+                        }
+                        >div{
+                            p{
+                                margin-bottom: 0;
+                            }
+                            padding: 0;
+                            &:nth-child(odd){
+                                text-align: right;
+                            }
+                        }
+                    }
+                    .right{
+                        @media (max-width:340px) {
+                            width: 100px;
+                        }
+                        position: relative;
+                        display: flex;
+                        width: 120px;
+                        height: 160px;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        .tooltips{
+                            position: absolute;
+                            width: 100%;
+                            top: 20px;
+                            text-align: center;
+                            .btn-default{
+                                &:first-of-type{
+                                    color: @main-color;
+                                    border-color: @main-color;
+                                }
+                                &:last-of-type{
+                                    color: green;
+                                    border-color: green;
+                                }
+                            }
+                        }
+                        p{
+                            margin: 0;
+                        }
+                        span{
+                            font-size: 30px;
+                        }
+                        &::before{
+                            content: "";
+                            width: 16px;
+                            height: 16px;
+                            border-radius: 50%;
+                            background-color: @bg-color;
+                            position: absolute;
+                            left: -8px;
+                            top: -8px;
+                        }
+                        &::after{
+                            content: "";
+                            width: 16px;
+                            height: 16px;
+                            border-radius: 50%;
+                            background-color: @bg-color;
+                            position: absolute;
+                            left: -8px;
+                            bottom: -8px;
+                        }
+
+                    }
+                    &.active{
+                        background-color: @main-color;
+                        color: #fff;
+                        &::before{
+                            content: "\e915";
+                            position: absolute;
+                            font-family: 'itcast';
+                            font-size: 30px;
+                            top: -6px;
+                        }
+                    }
+    
+                }
+            }
+        }
+    }
+}
+
+/*新闻区域*/
+
+#news{
+    padding: 40px 0;
+    .container{
+        .row{
+            .nav-title{
+                // color: @a-color;
+                position: relative;
+                text-align: center;
+                >h4{
+                    position: relative;
+                    line-height: 40px;
+                    border-bottom: 1px dashed @border-color;
+                    &::before{
+                        content: "";
+                        position: absolute;
+                        width: 12px;
+                        height: 12px;
+                        border-radius: 50%;
+                        border: 1px solid #ccc;
+                        bottom: -6px;
+                        right: -12px;
+                    }
+                }
+                
+            }
+            .nav-tabs{
+                text-align: center;
+                
+                li{
+                    @media (max-width:768px) {
+                        width: 25%;
+                    }
+                    a{
+                        font-size: 30px;
+                        border: 0;
+                        border-radius: 50%;
+                        color: #555;
+                        height: 60px;
+                        width: 60px;
+                        margin-bottom: 20px;
+                        
+                        &:hover{
+                            background-color: @main-color;
+                        }
+                        
+                    }
+                    &.active{
+                        a{
+                            color: #ccc;
+                            background-color: @main-color;
+                        }
+                        
+                    }
+                }
+
+            }
+            .tab-content{
+                >div{
+                    ul{
+                        @media (max-width:380px) {
+                            padding-left: 20px;
+                        }
+                        li{
+                            list-style: none;
+                            a{
+                                color: @a-color;
+                                text-decoration: none;
+                                line-height: 40px;
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+}
+
+
+/*合作伙伴区域*/
+#partner{
+    padding: 30px 0;
+    .title{
+        text-align: center;
+    }
+    .content{
+        ul{
+            display: flex;
+            flex-wrap: wrap;
+            li{
+                list-style: none;
+                flex: 1;
+                a{
+                    text-decoration: none;
+                    
+                    i{
+                        font-size: 60px;
+                        color: @a-color;
+                        &:hover{
+                            color: @main-color;
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+}
+
+
+/*模态框区域*/
+#myModal{
+    
+}
